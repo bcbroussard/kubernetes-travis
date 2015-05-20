@@ -103,6 +103,8 @@ var source = {
       'components/**/*.*',
       component_ignored_files,
       '!components/**/config/*.*',
+      '!components/**/test/**/*.*',
+      '!components/**/protractor/**/*.*',
       '!master/shared/js/modules/config.js',
       '!components/*/less/*.*',
       '!components/**/less/**/*.*'
@@ -112,6 +114,8 @@ var source = {
       'components/**/*.*',
       component_ignored_files,
       '!components/**/config/*.*',
+      '!components/**/test/**/*.*',
+      '!components/**/protractor/**/*.*',
       '!master/shared/js/modules/config.js',
       '!components/**/less/*.*'
     ]
