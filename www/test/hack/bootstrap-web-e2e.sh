@@ -94,6 +94,6 @@ ${KUBECTL} create -f examples/pod.yaml
 
 kube::log::status "Running e2e tests"
 
-(cd "${KUBE_ROOT}/www/master/protractor"; ../node_modules/protractor/bin/protractor conf.js --baseUrl http://localhost:8080/static/app/ --capabilities.browserName firefox)
+"protractor ${KUBE_ROOT}/www/master/protractor/conf.js --baseUrl http://localhost:8080/static/app/ --capabilities.browserName firefox"
 
 
