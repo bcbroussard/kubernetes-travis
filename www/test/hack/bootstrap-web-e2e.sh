@@ -75,6 +75,11 @@ function cleanup() {
 
 trap cleanup EXIT SIGINT
 
+which protractor >/dev/null || {
+  kube::log::usage "protractor must be in your PATH"
+  exit 1
+}
+
 kube::etcd::start
 
 kube::log::status "Running tests for web ui e2e scenario"
@@ -94,6 +99,4 @@ ${KUBECTL} create -f examples/pod.yaml
 
 kube::log::status "Running e2e tests"
 
-"protractor ${KUBE_ROOT}/www/master/protractor/conf.js --baseUrl http://localhost:8080/static/app/ --capabilities.browserName firefox"
-
-
+protractor "${KUBE_ROOT}/www/master/protractor/conf.js" --baseUrl http://localhost:8080/static/app/ --capabilities.browserName firefox
