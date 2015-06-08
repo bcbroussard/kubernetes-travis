@@ -33,7 +33,7 @@ install:
   - ./hack/verify-description.sh
   - ./hack/travis/install-std-race.sh
   - ./hack/build-go.sh
-  - GOPATH=$PWD/Godeps/_workspace:$GOPATH go install ./...
+  - GOPATH=$GOPATH/src/github.com/GoogleCloudPlatform/Godeps/_workspace:$GOPATH go install ./...
   - PATH=$HOME/gopath/bin:./third_party/etcd:$PATH ./hack/verify-gendocs.sh
   - curl -sL https://deb.nodesource.com/setup | sudo bash -
   - sudo apt-get install -y nodejs firefox xvfb openjdk-7-jre-headless
